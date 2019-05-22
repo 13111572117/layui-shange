@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.js"></script>
+    <script src="./vue.js"></script>
+    <title>白鹭科技</title>
+    <style>
+    /* *{
+        background-color: #fff;
+    } */
+    .max-header{
+        height: 58px;
+        background-color: #1a1a1a;
+    }
+    .main-header{
+        width:80%;
+        height: 58px;
+        margin-left: 10%;
+    }
+    .main-header img{
+        float: left;
+        margin-top: 9px;
+    }
+    .dhtt li a, .logo-header a , .en a{
+        margin-top: 18px;
+        font-size: 14px;
+        color: #eee;
+        margin-left: 10px;
+        padding-left: 10px;
+        float: left;
+    }
+    .dhtt li :hover{
+        font-size: 15.5px;
+        color: rgb(35, 238, 245);
+    }
+    .en{
+        float: right;
+    }
+    .en a{
+        position: absolute;
+        margin-top: 0px;
+        display: block;
+        width: 30px;
+        height: 40px;
+        line-height: 40px;
+        top:9px;
+        background-color: blue;
+        border-radius: 30px;
+    }
+    .test1{
+        /* position: relative; */
+        display: inline-block;
+    }
+    .dhtt2{
+        display: none;
+        position: absolute;
+        z-index: 25;
+        left: 25%;
+        top: 60px;
+        width: 808px;
+        background-color: #1a1a1a;
+    }
+    .test1:hover .dhtt2 {
+        display: block;
+    }
+    .dhtt2 img{
+        width:40px;
+        height: 40px; 
+        margin-right: 10px;
+    }
+    .dhtt2 li{
+        float: left;
+        width: 200px;
+        height: 50px;
+        border: 1px solid #eee;
+    }
+    .lunbo img{
+        width: 100%;
+        height: 100%;
+        margin-top:0;
+    }
+    .ttl-lunbo{
+        width: 100%;
+        line-height: 68px;
+        height: 68px;
+        position: absolute;
+        top: 88%;
+        z-index: 30;
+        transform: translateY(-55%);
+        background: rgba(0, 0, 0, 0.3);
+    }
+    .ttl-lunbo li{
+        padding-left:30px; 
+        border:1px solid #eee;
+        border-style: none solid none solid; 
+        left: 25%;
+        transform: translateX(-25%);
+    }
+    .ttl-lunbo a{
+        /* text-align: center; */
+        font-size: 16px;
+        color: #eee;
+    }
+    .ttl-lunbo img{
+        width: 45px;
+        height: 45px;
+    }
+    .content{
+        margin: 0 auto;
+        width: 80%;
+    }
+    .yinqing{
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 50px;
+    }
+    .yinqing img{
+        float: left;
+    }
+    .yinqing button , .boke button{
+        background-color: #fff;
+        border:1px solid blue;
+        color:blue;
+    }
+    .yingqing-ct{
+        width: 100%;
+        height: 550px;
+        background-color: #f7fafc;
+
+    }
+    .ttl1{
+        height: 192px;
+        text-align: center;
+    }
+    .ttl1 h1{
+        color: #292a2f;
+        margin-bottom: 20px;
+    }
+    .ttl1 p{
+        color: #87888c;
+        font-size: 19px;
+    }
+    .tubiao img{
+        width: 30px;
+        height: 30px;
+        margin-left: 8px;
+        padding-left:8px; 
+    }
+    .ttl3{
+        margin-top: 60px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .yingqing-lunbo{
+        position: relative;
+        left: 50%; 
+        transform: translateX(-50%);
+        background-color: #f7fafc;   
+    }
+    .tuijian img{
+        width: 325px;
+        height: 335px;
+        border-radius: 5px 5px 1px 1px;
+    }
+    .tuijian li{
+        margin-top: 30px;
+        height: 452px;
+    }
+    .tuijian h3{
+        font-size: 16px;
+        color: #292a2f;
+        margin: 10px 0 10px 10px;
+    }
+    .tuijian p{
+        font-size: 15px;
+        color: #a4a2a2;
+        margin: 10px 10px 0px 10px;
+    }
+    .bknr{
+        width: 325px;
+        background-color: #eee;
+        border-radius: 5px 5px 5px 5px
+    }
+    .test4 li{
+        height: 220px;
+        margin-top: 30px;
+    }
+    .test4 img{
+        position: relative;
+        left: 10%;
+        border-radius:5px;
+        width: 300px;
+        height: 117px;
+        
+    }
+    .test4 a{
+        position: relative;
+        left: 10%;
+        display: block;
+        width: 300px;
+        font-size: 15px;
+        color: #1a1a1a;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .boke-cct{
+        margin-top: 60px;
+    }
+    .zhizuo img{
+        width: 190px;
+        height: 162px;
+        border-radius:10px; 
+    }
+    .cainiao h3{
+        margin: 10px 0px 20px 40px;
+        font-size: 14px;
+        color:#292f2a;
+    }
+    .cainiao p{
+        margin: 0px 30px 0px 40px;
+        font-size: 13px;
+        color: #9c9fae;
+    }
+    .cainiao button{
+        margin: 20px 30px 0px 40px;
+    }
+    .demo{
+        height: 209px;
+        border-radius:10px;
+        background: linear-gradient(186deg,rgba(0,174,255,1) 0%,rgba(57,120,255,1) 100%);
+    }
+    .demo li{
+        padding-top:10px; 
+        text-decoration: none;
+        font-size: 10px;
+        color: #fff;
+        margin-left: 5%;
+        width: 90%;
+        height: 36px;
+        border-bottom: 1px solid #fff;
+    }
+    .demo li:nth-of-type(5){
+        border: none;
+    }
+    .demo a{
+        color: #fff;
+    }
+    .shrink{
+        margin-left: 16px;
+        display: none;
+        margin-top: 12px;
+        font-size: 30px;
+        color: rgb(211, 211, 211);
+    }
+    .shrink:hover{
+        color: #487af6;
+        font-size: 31px;
+    }
+    .home{
+        display: none;
+    }
+    .ydh{
+        width:100%;
+        text-align: center;
+        position: fixed;
+        color: #eee;
+        background-color: #1a1a1a;
+        top: 58px;
+        z-index: 20;
+        display: block;
+    }
+    .ydh li:nth-of-type(6){
+        border: 0px;
+    }
+    .ydh li{
+        font-size: 15px;
+        border-bottom: 1px solid #fff;
+    }
+    .fade i:hover{
+        font-size: 20px;
+        color: #487af6;
+    }
+    .hezuo img{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 105px;
+        height: 48px;
+    }
+    .max-footer{
+        width: 100%;
+        height: 118px;
+        background-color: #333333;
+    }
+    .max-footer a{
+        color: #fff;
+        font-size: 12px;
+    }
+    .main-footer{
+        width: 80%;
+        margin-left:10%; 
+    }
+    .main-footer li{
+        margin-top: 40px;
+    }
+    .main-footer div{
+        padding-left: 10%;
+        margin-top: 40px;
+        border-style:none none none solid; 
+    }
+    .yizhan-yd{
+        display: none;
+    }
+    .tubiao-yd{
+        display: none;
+    }
+    .lunbo-yd{
+        display: none;
+    }
+    .gengduo{
+        display: none;
+    }
+    .fenye{
+        display: none;
+    }
+    .hezuo li:nth-of-type(19){
+        display: none;
+    }
+    .ft-lianxi{
+        display: none;
+    }
+    @media screen and (max-width:1290px){
+        .main-header{
+            height: 58px;
+        }
+        .dhtt li:nth-of-type(10){
+            display: none;
+        }
+        .dhtt li:nth-of-type(9){
+            display: none;
+        }
+    }
+    @media screen and (max-width:1100px){
+        .dhtt li{
+            display: none
+        }
+        .shrink{
+            display: block;
+        }
+        .ttl-lunbo{
+            display: none;
+        }
+        .home{
+            display: block;
+        }
+    }
+    @media screen and (max-width:1000px){
+        .main-footer div{
+            display: none;
+        }
+        .main-footer li{
+            position: relative;
+            left: 10%;
+            transform: translateX(-25%);
+        }
+    }
+    @media screen and (max-width:770px){
+        .yinqing button{
+            display: none;
+        }
+        .test5{
+            display: none;
+        }
+        .zhizuo{
+            display: none;
+        }
+        .tuijian img{
+            width: 280px;
+            height: 280px;
+        }
+        .bknr{
+            width: 280px;
+        }
+    }
+    @media screen and (max-width:750px){
+        .test4 img , .test4 a{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .tuijian li{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    @media screen and (max-width:550px){
+        .logo-header a{
+            display: none;
+        }
+        .yinqing:nth-of-type(1){
+            display: none;
+        }
+        .yinqing{
+            font-size: 10px;
+        }
+        .yinqing img{ 
+            height: 20px;
+            float: left;
+            margin-top: 5px;
+        }
+        .yingqing-ct{
+            display: none;
+        }
+        .ttl3{
+            display: none;
+        }
+        .zhishi{
+            height: 200px;
+        }
+        .lunbo-yd{
+            display: block;
+            background-color: #487af6;
+            width: 100%;
+            text-align: center;
+        }
+        .lunbo-yd h1{
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .lunbo-yd p{
+            font-size: 9px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .yztb-yd{
+            width: 100%;
+            height: 100px;
+        }
+        .yizhan-yd{
+            display: block;
+            text-align: center;
+            font-size: 10px;
+            color: #87888c;
+        }
+        .lunbo2-yd img{
+            width: 100%;
+            height: 195px;
+        }
+        .tubiao-yd{
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .tubiao-yd img{
+            width:38px;
+            height: 38px;
+        }
+        .tubiao-yd ul{
+            margin-left: 5%;
+        }
+        .tubiao-yd li{
+            float: left;
+            width: 15%;
+        }
+        .bknr h3{
+            display: none;
+        }
+        .bknr p{
+            display: none;
+        }
+        .tuijian{
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            margin-top: 110px;
+        }
+        .bknr{
+            width: 100%;
+        }
+        .tuijian li{
+            margin-top: 15px;
+            height: auto;
+        }
+        .tuijian img{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width:100%;
+            height: 180px;
+            border-radius: 10px 10px 10px 10px;
+        }
+        .tuijian li:nth-of-type(4){
+            display: none;
+        }
+        .tuijian li:nth-of-type(5){
+            display: none;
+        }
+        .tuijian li:nth-of-type(6){
+            display: none;
+        }
+        .gengduo{
+            display: block;
+            margin: 30px 0 10px 0;
+            text-align: center;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 0;
+            color: #fff;
+        }
+        .fenye{
+            display: block;
+            margin: 10px 0 10px 0;
+            width: 125%;
+            height:10px;
+            position:relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #dfdfdf;
+        }
+        .test4{
+            margin-bottom: 30px;
+        }
+        .test4 li{
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: auto;
+        }
+        .test4 img{
+            margin-left: 2%;
+            left: 0;
+            transform: translateX(0);
+            /* clear: both; */
+            width: 40%;
+            height: 88px;
+            float: left;
+        }
+        .test4 a{
+            left: 0;
+            transform: translateX(0);
+            float: left;
+            width: 55%;
+        }
+        .boke {
+            margin-bottom: 30px;
+        }
+        .hezuo{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110%;
+        }
+        .hezuo img{
+            border: 1px solid rgb(230, 230, 230);
+            border-radius: 5px;
+        }
+        .hezuo li {
+            margin: 20px 2% 10px 1%;
+            width: 30%;
+            height: 50px;
+        }
+        .hezuo li:nth-of-type(12){
+            display:none;
+        }
+        .hezuo li:nth-of-type(13){
+            display:none;
+        }
+        .hezuo li:nth-of-type(14){
+            display:none;
+        }
+        .hezuo li:nth-of-type(15){
+            display:none;
+        }
+        .hezuo li:nth-of-type(16){
+            display:none;
+        }
+        .hezuo li:nth-of-type(17){
+            display:none;
+        }
+        .hezuo li:nth-of-type(18){
+            display:none;
+        }
+        
+        .hezuo li:nth-of-type(19){
+            display: block;
+        }
+        .hezuo li:nth-of-type(19) a{
+            display: block;
+            margin-left: 30%;
+            font-size: 50px;
+            color: rgb(204, 204, 204);
+        }
+        .max-footer{
+            background-color: #737F95;
+        }
+        .main-footer{
+            width:100%;
+            margin: 0 auto;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .main-footer li{
+            width: 20%;
+            float: left;
+            margin-top: 15px;
+        }
+        .main-footer br{
+            display: none;
+        }
+        .ft-lianxi p{
+            margin-top: 6px;
+            text-align: center;
+            font-size: 13px;
+            color: #f6f9fc
+        }
+        .ft-lianxi{
+            display: block;
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header class="max-header">
+        <div class="main-header layui-row">
+            <div class="logo-header layui-col-lg3 layui-col-md3 layui-col-sm4 layui-col-xs5">
+                <img style="width: 40px;height: 40px;" src="./images/白鹭/product-icon-engine.jpg" alt="">
+                <a href="">Egret Technology</a>
+            </div>
+            <ul class="dhtt layui-col-lg8 layui-col-md8 layui-col-sm7 layui-col-xs6">
+                <li><a href="">首页</a></li><a href=""></a>
+                <li><a class="test1" href="">产品</a></li>
+                <li><a href="">解决方案</a></li>
+                <li><a href="">开发者中心</a></li>
+                <li><a href="">案例</a></li>
+                <li><a href="">众包平台</a></li>
+                <li><a href="">教育</a></li>
+                <li><a href="">区块链实验室</a></li>
+                <li><a href="">社区</a></li>
+                <li><a href="">关于我们</a></li>
+            </ul>
+            <div class="home" id="home">
+                <div class="layui-col-sm7 layui-col-xs6">
+                    <i v-on:click="switchOff" class="shrink  layui-icon layui-icon-shrink-right"></i>
+                </div>
+                <transition class="fade">
+                    <ul v-if="switchBox" class="ydh layui-nav-child">
+                        <li>首页</li>
+                        <li>解决方案</li>
+                        <li>开发者中心</li>
+                        <li>案例</li>
+                        <li>众包平台</li>
+                        <li>更多</li>
+                    </ul>
+                </transition>
+            </div>
+            
+            <ul class="dhtt2">
+                <li>
+                    <img src="./images/白鹭/product-icon-engine.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/logo.png" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/product-icon-dragonbones.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/product-icon-feather.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/product-icon-inspector.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/product-icon-lakeshore.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/product-icon-native.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/product-icon-resdepot.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/product-icon-wing.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+                <li>
+                    <img src="./images/白鹭/product-icon-texture.jpg" alt="">
+                    <a href="">Egret Technology</a>
+                </li>
+            </ul>
+            <div class="en layui-col-lg1 layui-col-md1 layui-col-sm1 layui-col-xs1"><a href="">EN</a></div>
+        </div>
+    </header>          
+    <div style="height:200px;background-color: #fff;" class="lunbo layui-carousel" id="test2">
+        <div style="height:100%" class="zhishi" carousel-item>
+            <div><img src="./images/白鹭/kv1.jpg" alt=""></div>
+            <div><img src="./images/白鹭/kv2.jpg" alt=""></div>
+            <div><img src="./images/白鹭/kv3.jpg" alt=""></div>
+        </div>
+        <div class="ttl-lunbo layui-row">
+            <ul>
+                <li class="layui-col-lg2 layui-col-md2 layui-col-sm6 layui-col-xs6">
+                    <img src="./images/白鹭/bottom1.png" alt="">
+                    <a href="">白鹭科技优势</a>
+                </li>
+                <li class="layui-col-lg2 layui-col-md2 layui-col-sm6 layui-col-xs6">
+                    <img src="./images/白鹭/bottom2.png" alt="">
+                    <a href="">白鹭引擎服务</a>
+                </li>
+                <li class="layui-col-lg2 layui-col-md2 layui-col-sm6 layui-col-xs6">
+                    <img src="./images/白鹭/bottom3.png" alt="">
+                    <a href="">游戏案例精选</a>
+                </li>
+                </li>
+                <li class="layui-col-lg2 layui-col-md2 layui-col-sm6 layui-col-xs6">
+                    <img src="./images/白鹭/bottom3.png" alt="">
+                    <a href="">开发者快速入门</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="yinqing layui-row">
+            <h1 class="layui-col-lg11 layui-col-md11 layui-col-sm10 layui-col-xs-6"><img src="./images/白鹭/pen (1).png" alt="">白鹭引擎</h1>
+            <button class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs-6 layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">
+                查看更多
+            </button>
+        </div>
+
+        <!-- pc端 -->
+        <div class="yingqing-ct">
+            <div class="ttl1">
+                    <h1>效率至上的一站式完整开发工作流</h1>
+                    <p>2D/3D双核心渲染，开  发工具链闭环整合，全流程开发，由此开始</p>
+                <div class="ttl3 layui-row">
+                    <img class="layui-col-lg3 layui-col-sm3 layui-col-md3 layui-col-xs3" src="./images/白鹭/engineLeft.png" alt="">
+                    <div class="tubiao layui-col-lg6 layui-col-md6 layui-col-sm6 layui-col-xs6">
+                        <img src="./images/白鹭/h5.png" alt="">
+                        <img src="./images/白鹭/ap.png" alt="">
+                        <img src="./images/白鹭/fb.png" alt="">
+                        <img src="./images/白鹭/an.png" alt="">
+                        <img src="./images/白鹭/qz.png" alt="">
+                        <img src="./images/白鹭/wx.png" alt="">
+                    </div>
+                    <img class="layui-col-lg3 layui-col-sm3 layui-col-md3 layui-col-xs3" src="./images/白鹭/engineRight.png" alt="">
+                </div>
+            </div>
+            <div class="yingqing-lunbo layui-carousel" id="test3">
+                <div class="lunbo2" carousel-item>
+                    <img src="./images/白鹭/engine1.png" alt="">
+                    <img src="./images/白鹭/engine2.png" alt="">
+                    <img src="./images/白鹭/engine3.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- 移动 -->
+        <div class="lunbo-yd layui-carousel" id="test-yd">
+            <div class="lunbo2-yd" carousel-item>
+                <div>
+                    <h1>效率至上的一站式完整开发工作流</h1>
+                    <p>2D/3D双核心渲染，开  发工具链闭环整合，全流程开发，由此开始</p>
+                    <img src="./images/白鹭/engine1.png" alt="">
+                </div>
+                <div>
+                    <h1>效率至上的一站式完整开发工作流</h1>
+                    <p>2D/3D双核心渲染，开  发工具链闭环整合，全流程开发，由此开始</p>
+                    <img  src="./images/白鹭/engine2.png" alt="">
+                </div>
+                <div>
+                    <h1>效率至上的一站式完整开发工作流</h1>
+                    <p>2D/3D双核心渲染，开  发工具链闭环整合，全流程开发，由此开始</p>
+                    <img src="./images/白鹭/engine3.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="yztb-yd">
+            <p class="yizhan-yd">一站对接各大平台</p>
+            <div class="tubiao-yd ">
+                <ul>
+                    <li><img src="./images/白鹭/h5.png" alt=""></li>
+                    <li><img src="./images/白鹭/ap.png" alt=""></li>
+                    <li><img src="./images/白鹭/fb.png" alt=""></li>
+                    <li><img src="./images/白鹭/an.png" alt=""></li>
+                    <li><img src="./images/白鹭/qz.png" alt=""></li>
+                    <li><img src="./images/白鹭/wx.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="fenye"></div>
+        <div class="yinqing">
+            <h1 class="layui-col-lg11 layui-col-sm10 layui-col-md11 layui-col-xs6"><img src="./images/白鹭/pen (1).png" alt="">案例推荐</h1>
+            <button class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs-6 layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">
+                查看更多
+            </button>
+        </div>
+        <!-- PC端 -->
+        <div class="tuijian layui-container">
+            <ul class="layui-row">
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <div class="bknr"> 
+                        <img src="./images/白鹭/5bae0283c104d.jpg" alt="">
+                        <h3>传奇来了</h3>
+                        <p>微信小程序版还原经典传奇，采用无缝跨屏模式，画面清晰精致，打击感实足。游戏效果写实逼真，角色形象霸气十足！</p>
+                    </div>
+                </li>
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <div class="bknr">
+                        <img src="./images/白鹭/5bae02aac04a3.png" alt="">
+                        <h3>女皇陛下</h3>
+                        <p>后宫美男恋爱养成游戏，以历史美男收集，角色换装为主展开宫廷恋爱之旅，兼具古典唯美的画风和丰富的游戏剧情！</p>
+                    </div>
+                </li>
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <div class="bknr">
+                        <img src="./images/白鹭/5bae02b9c85ac.jpg" alt="">
+                        <h3>海盗来了</h3>
+                        <p>以海盗为题材的社交类小游戏，玩家可以通过转盘获得金币和道具建造属于自己的海岛，探索新的世界，结交新的朋友！</p>
+                    </div>
+                </li>
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <div class="bknr">
+                        <img src="./images/白鹭/5c985bcdb3dff.png" alt="">
+                        <h3>时光幻境</h3>
+                        <p>史诗级魔幻手游，多人同屏真实PK。神秘的魔幻大陆上，有造型华丽的不同种族，也有举世无双的惊世神兵！</p>
+                    </div>
+                </li>
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <div class="bknr">
+                        <img src="./images/白鹭/5c985c6d3d4eb.png" alt="">
+                        <h3>梦道</h3>
+                        <p>以仙侣、宠物、酷炫造型为特色的回合制挂置游戏。浓郁的仙侠气息，酷炫的坐骑与翅膀系统！好礼相送，快人一步！</p>
+                    </div>
+                </li>
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <div class="bknr">
+                        <img src="./images/白鹭/5c985c921048c.png" alt="">
+                        <h3>幸福厨房</h3>
+                        <p>腾讯独代的趣味经营社交游戏，玩家可根据菜谱烹制菜品，经营饭店，收集生活百感，品尝好友的美食，与好友交换食材。</p>
+                    </div>
+                </li>
+            </ul>
+                <button class="gengduo layui-btn-sm layui-btn-radius layui-btn-normal">查看更多</button>
+        </div>
+        <div class="fenye"></div>
+        <div class="yinqing">
+            <h1 class="layui-col-lg11 layui-col-sm10 layui-col-md11 layui-col-xs6"><img src="./images/白鹭/pen (1).png" alt="">新闻推荐</h1>
+            <button class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs-6 layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">
+                查看更多
+            </button>
+        </div>
+        <div class="test4 layui-row">
+            <ul>
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <img src="./images/白鹭/5c74a090a4ffe.jpg" alt="">
+                    <a href="">白鹭引擎团队即将发布Egret Pro，并公布后续路线图</a>
+                </li>
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <img src="./images/白鹭/5be01d20652c8.png" alt="">
+                    <a href="">白鹭科技陈书艺：小游戏海外推广应注重本地化、用户与流量</a>
+                </li>
+                <li class="layui-col-lg4 layui-col-md6 layui-col-sm6 layui-col-xs12">
+                    <img src="./images/白鹭/5c2efbeb46f9a.jpg" alt="">
+                    <a href="">Egret Wing全年新形态开启内测，发布全新工具</a>
+                </li>
+            </ul>
+        </div>
+            <button class="gengduo layui-btn-sm layui-btn-radius layui-btn-normal">查看更多</button>
+
+        <div class="fenye"></div>
+        <div class="boke layui-row layui-col-space6">
+            <div class="layui-col-lg6 layui-col-md12 layui-col-sm12 layui-col-xs12">
+                <h1 class="layui-col-lg9 layui-col-md10 layui-col-sm10 layui-col-xs-10">
+                    <img src="./images/白鹭/pen (1).png" alt="">
+                    技术博客
+                </h1>
+                <button class="test5 layui-col-lg3 layui-col-md2 layui-col-sm2 layui-col-xs-2 layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">
+                    查看更多
+                </button>
+                <div class="boke-cct">
+                    <div class="zhizuo layui-col-lg4 layui-col-md4 layui-col-sm4 layui-col-xs5">
+                        <img src="./images/白鹭/5caafdfa816e0.jpg" alt="">
+                    </div>
+                    <div class="cainiao layui-col-lg8 layui-col-md8 layui-col-sm8 layui-col-xs12">
+                        <h3>菜鸟丨Egret制作打砖块小游戏项目实战</h3>
+                        <p>本文我们将通过egret引擎实现一个简单的打砖块游戏，游戏的目标是通过屏幕下方的物体接住并反弹...</p>
+                        <button style="background-color:#487af6;color: #fff;border: #487af6" class="layui-btn layui-btn-xs layui-btn-radius layui-btn-normal">详细</button>
+                    </div>
+                    <div style="margin-top: 10px;" class="layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12">
+                        <img style="margin-top:20px" class="layui-col-lg3 layui-col-md3 layui-col-sm3 layui-col-xs3" src="./images/白鹭/line.png" alt="">
+                        <img class="layui-col-lg1 layui-col-md1 layui-col-sm1 layui-col-xs1" src="./images/白鹭/blogLeft.png" alt="">
+                        <p style="text-align: center;margin-top:10px;columns: #a4a2a4;font-size:10px" class="layui-col-lg4 layui-col-md4 layui-col-sm4 layui-col-xs4"> 2019年4月4日</p>
+                        <img class="layui-col-lg1 layui-col-md1 layui-col-sm1 layui-col-xs1" src="./images/白鹭/blogRight.png" alt="">
+                        <img style="margin-top:20px" class="layui-col-lg3 layui-col-md3 layui-col-sm3 layui-col-xs3" src="./images/白鹭/line.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-lg6 layui-col-md12 layui-col-sm12 layui-col-xs12">
+                <h1 class="layui-col-lg9 layui-col-md10 layui-col-sm10 layui-col-xs-10">
+                    <img src="./images/白鹭/pen (1).png" alt="">
+                    社区热帖
+                </h1>
+                <button class="test5 layui-col-lg3 layui-col-md2 layui-col-sm2 layui-col-xs-2 layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">
+                    查看更多
+                </button>
+                <div class="boke-cct demo ">
+                    <ul>
+                        <li class="layui-row  layui-col-space12">
+                            <p class="layui-col-lg1 layui-col-md1 layui-col-sm1 layui-col-xs1">•</p>
+                            <a class="layui-col-lg9 layui-col-md9 layui-col-sm9 layui-col-xs9" href="">矩形区域的碰撞检测</a>
+                            <div class="layui-col-lg2 layui-col-md2 layui-col-sm2 layui-col-xs2"><i class="layui-icon layui-icon-radio"></i>5631</div>
+                        </li>
+                        <li class="layui-row  layui-col-space12">
+                            <p class="layui-col-lg1 layui-col-md1 layui-col-sm1 layui-col-xs1">•</p>
+                            <a class="layui-col-lg9 layui-col-md9 layui-col-sm9 layui-col-xs9" href="">矩形区域的碰撞检测</a>
+                            <div class="layui-col-lg2 layui-col-md2 layui-col-sm2 layui-col-xs2"><i class="layui-icon layui-icon-radio"></i>5631</div>
+                        </li>
+                        <li class="layui-row  layui-col-space12">
+                            <p class="layui-col-lg1 layui-col-md1 layui-col-sm1 layui-col-xs1">•</p>
+                            <a class="layui-col-lg9 layui-col-md9 layui-col-sm9 layui-col-xs9" href="">矩形区域的碰撞检测</a>
+                            <div class="layui-col-lg2 layui-col-md2 layui-col-sm2 layui-col-xs2"><i class="layui-icon layui-icon-radio"></i>5631</div>
+                        </li>
+                        <li class="layui-row  layui-col-space12">
+                            <p class="layui-col-lg1 layui-col-md1 layui-col-sm1 layui-col-xs1">•</p>
+                            <a class="layui-col-lg9 layui-col-md9 layui-col-sm9 layui-col-xs9" href="">矩形区域的碰撞检测</a>
+                            <div class="layui-col-lg2 layui-col-md2 layui-col-sm2 layui-col-xs2"><i class="layui-icon layui-icon-radio"></i>5631</div>
+                        </li>
+                        <li class="layui-row  layui-col-space12">
+                            <p class="layui-col-lg1 layui-col-md1 layui-col-sm1 layui-col-xs1">•</p>
+                            <a class="layui-col-lg9 layui-col-md9 layui-col-sm9 layui-col-xs9" href="">矩形区域的碰撞检测</a>
+                            <div class="layui-col-lg2 layui-col-md2 layui-col-sm2 layui-col-xs2"><i class="layui-icon layui-icon-radio"></i>5631</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="fenye"></div>
+        <div class="yinqing">
+            <h1 class="layui-col-lg11 layui-col-sm10 layui-col-md11 layui-col-xs6"><img src="./images/白鹭/pen (1).png" alt="">合作伙伴</h1>
+            <button class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs-6 layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">
+                查看更多
+            </button>
+        </div>
+        <div class="hezuo layui-row">
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/google.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/appleB.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/ms (1).png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/tc.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/mi.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/we.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/k.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/apus.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/fbc.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/tap.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/yz.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/cu.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/kun.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/360.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/lie.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/ya.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/baidu.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><img src="./images/白鹭/oppo.png" alt=""></li>
+            <li class="layui-col-lg2 layui-col-md3 layui-btn-sm6 layui-col-xs6"><a class="layui-icon layui-icon-more" href=""></a></li>
+        </div>
+    </div>
+    <footer class="max-footer layui-container">
+        <div class="main-footer layui-row">
+            <ul>
+                <li class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs2 layui-col-xs-offset">
+                    <a href="">关于<br>我们</a>
+                </li>
+                <li class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs2">
+                    <a href="">产品<br>下载</a>
+                </li>
+                <li class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs2">
+                    <a href="">技术<br>支持</a>
+                </li>
+                <li class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs2">
+                    <a href="">商务<br>合作</a>
+                </li>
+                <li class="layui-col-lg1 layui-col-md1 layui-col-sm2 layui-col-xs2">
+                    <a href="">加入<br>我们</a>
+                </li>
+                <div class="layui-col-lg4 layui-col-md4 layui-col-sm4 layui-col-xs4 layui-col-xs-offset3">
+                    <img src="./images/白鹭/qq.png" alt="">
+                    <img src="./images/白鹭/wxf.png" alt="">
+                    <img src="./images/白鹭/sina.png" alt="">
+                    <img src="./images/白鹭/zhi.png" alt="">
+                    <p>邮箱：bd@egret.com</p>
+                </div>
+            </ul>
+        </div>
+        <div class="ft-lianxi">
+            <p>联系电话：010-57112211</p>
+            <p>商务合作：BO@adolf.com</p>
+            <p>市场合作：Marketing@arget.com</p>
+        </div>
+    </footer>
+    
+    
+    <script type="text/javascript">
+        layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test2'//容器名称
+            ,width: '100%' //设置容器宽度
+            // ,height:'100%'
+            ,arrow: 'always' //始终显示箭头
+            ,indicator:'none'
+            // ,anim: 'updown' //切换动画方式
+        });
+        carousel.render({
+            elem: '#test3'//容器名称
+            ,width: '70%' //设置容器宽度
+            // ,height:'384px'
+            ,arrow: 'always' //始终显示箭头
+            ,autoplay: true //是否自动切换
+            ,indicator: 'none' //是否显示指示器
+            // ,anim: 'updown' //切换动画方式
+        });
+        carousel.render({
+            elem: '#test-yd'//容器名称
+            ,width: '100%' //设置容器宽度
+            // ,height:'384px'
+            ,arrow: 'always' //始终显示箭头
+            ,autoplay: true //是否自动切换
+            ,indicator: 'none' //是否显示指示器
+            // ,anim: 'updown' //切换动画方式
+        });
+        });
+        layui.use('element', function(){
+            var element = layui.element;
+
+            //…
+        });
+    </script>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+</body>
+<script>
+    //单击菜单事件
+    var vm = new Vue({
+        el:"#home",
+        data:{
+            switchBox:false
+        },
+        methods:{
+            switchOff(){
+                this.switchBox = !this.switchBox;
+            }
+        }
+    });
+</script>
+</html>
